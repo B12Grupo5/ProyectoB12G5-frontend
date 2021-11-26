@@ -1,0 +1,30 @@
+<div class="contenedor">
+  <h1>Agregar Producto</h1>
+  <form [formGroup]="formgroup">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Nombre del producto</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese nombre del producto" formControlName="nombre_producto"/>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Descripcion</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese la descripcion del producto" formControlName="descripcion"/>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Valor</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese valor del producto" formControlName="valor"/>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Cantidad</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese cantidad de productos disponibles para vender " formControlName="cantidad_disponible"/>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Categoria</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese la categoria a la cual pertenece el producto" formControlName="categoria"/>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Usuario vendedor</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese usuario vendedor " formControlName="usuario_vendedor"/>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="formgroup.invalid" (click)="agregarProducto()">Agregar Producto</button>
+  </form>
+</div>

@@ -1,0 +1,11 @@
+<div class="contenedor">
+  <h1>Eliminar Producto</h1>
+  <form [formGroup]="formgroup">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label" style="font-weight: bold;">Id</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese el Id del producto a eliminar" formControlName="id"/>
+    </div>
+    <button type="submit" class="btn btn-danger" [disabled]="formgroup.invalid">Eliminar Producto</button>
+  </form>
+</div>
+

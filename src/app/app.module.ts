@@ -9,6 +9,13 @@ import { TablaProductosComponent } from './components/tabla-productos/tabla-prod
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HeaderiniComponent } from './components/headerini/headerini.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { ProductosComponent } from './components/productos/productos.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductosService } from './services/productos/productos.service';
+import { EliminarProductoComponent } from './components/eliminar-producto/eliminar-producto.component';
+import { ErrorComponent } from './components/error/error.component';
+import { FormularioProductoComponent } from './components/formulario-producto/formulario-producto.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,13 +25,19 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
     TablaProductosComponent,
     NotFoundComponent,
     HeaderiniComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    ProductosComponent,
+    EliminarProductoComponent,
+    ErrorComponent,
+    FormularioProductoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [ProductosService  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

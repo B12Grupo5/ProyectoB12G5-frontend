@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProductoModel } from 'src/app/models/producto';
+import { ProductosService } from 'src/app/services/productos/productos.service';
 
 @Component({
   selector: 'app-tabla-productos',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TablaProductosComponent implements OnInit {
 
-  constructor() { }
+  public productos: ProductoModel[]=[];
+  constructor(private productosService: ProductosService, private router: Router) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    this.productos=await this.obtenerProductos();
+    console.log(this.productos);
   }
 
+  public async obtenerProductos(): Promise<any> {
+    try {
+      const response = await this.productosService.obtenerProductos();
+      console.log(response);
+      return response.data;
+    } catch (error) {
+      console.log(error);
+      this.router.navigate(['/error']);
+    }
+  }
 }
