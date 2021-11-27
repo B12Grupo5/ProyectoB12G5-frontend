@@ -16,6 +16,8 @@ import { EliminarProductoComponent } from './components/eliminar-producto/elimin
 import { ErrorComponent } from './components/error/error.component';
 import { FormularioProductoComponent } from './components/formulario-producto/formulario-producto.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ActualizarProductoComponent } from './components/actualizar-producto/actualizar-producto.component';
+import { BuscarProductoComponent } from './components/buscar-producto/buscar-producto.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductosComponent,
     EliminarProductoComponent,
     ErrorComponent,
-    FormularioProductoComponent
+    FormularioProductoComponent,
+    ActualizarProductoComponent,
+    BuscarProductoComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,6 @@ import { getLocaleDateFormat } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from 'src/app/services/productos/productos.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { catchError } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Component({
@@ -26,15 +25,20 @@ export class EliminarProductoComponent implements OnInit {
   }
 
 
-  public eliminarProducto(){
-    /*this.productosService.eliminarProducto(this.formgroup.value).then(() => {
-      console.log();
-      /*if(response.message==='Deleted'){
+  public async eliminarProducto(){
+    try {
+      const response= await this.productosService.eliminarProducto(this.formgroup.value.id)
+      console.log(response.message);
+      if(response.message==='Deleted'){
         alert('Eliminado correctamente');
-      }*/
-    /*})catch(error => {
-      this.router.navigate(['/error'])
-    })*/
+      }else{
+        alert(response.message);
+      }
+      this.router.navigate(['/productos']);
+      console.log(Response);
+    } catch (error) {
+      this.router.navigate(['/error']);
+    }
   }
   
 }

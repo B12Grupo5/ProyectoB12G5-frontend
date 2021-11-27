@@ -31,6 +31,8 @@ export class FormularioProductoComponent implements OnInit {
   public agregarProducto(){
     this.productosService.agregarProducto(this.formgroup.value).then(() => {
       alert("Producto creado correctamente");
+      this.buildForm();
+      this.router.navigate(['/productos']);
     }).catch(error => {
       this.router.navigate(['/error'])
     })
